@@ -21,4 +21,5 @@ A simple and light-weight What's New modal for new app updates.
  - Optimised for iPhone and iPad.
 
 # Installation
-Simply copy **ARWhatsNew** folder into your Xcode project.
+ 1. Copy **ARWhatsNew** folder into your Xcode project.
+ 2. `#import "ARWhatsNew.h"`
