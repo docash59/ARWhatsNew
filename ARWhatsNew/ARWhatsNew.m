@@ -21,36 +21,14 @@
 
 @implementation ARWhatsNew
 
--(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    return self;
-}
-
--(void)checkAndPresentWhatsNew {
-    NSString *verStr = [NSString stringWithFormat:@"whatsNew_%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
-    
-        // Check if verStr has been seen already
-    if (![[[NSUserDefaults standardUserDefaults] objectForKey:verStr] boolValue]) {
-            // If not then present View Controller
-        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"iphone" bundle:nil];
-        UIViewController *svc = [mainStoryboard instantiateViewControllerWithIdentifier:@"whatsnew"];
-            // Present in FormSheet if on iPad
-        
+-(instancetype)initCheckAppVersion {
+    self = [super initWithNibName:NSStringFromClass([ARWhatsNew class]) bundle:nil];
+    if (self) {
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-            svc.modalPresentationStyle = UIModalPresentationFormSheet;
+            self.modalPresentationStyle = UIModalPresentationFormSheet;
         }
-        
-        [self presentViewController:svc animated:YES completion:nil];
     }
-}
--(void)presentWhatsNewWithNotes:(NSString *)notes {
-    
-    self.textViewNotes.text = NSLocalizedString(notes,);
-}
-
--(void)checkAndPresentWhatsNewPrimaryColor:(UIColor *)priCol secondaryColor:(UIColor *)secCol primaryTextColor:(UIColor *)priTxtCol getStartedText:(NSString *)getStartedText disableReadAll:(BOOL)disableRA {
-    
+    return self;
 }
 
 -(void)viewDidLoad {
@@ -68,15 +46,16 @@
     
         // Set and localise visible text
     [self.labelWhatsNew setText:NSLocalizedString(@"WHATS NEW",)];
-    [self.textViewNotes setText:[NSString stringWithFormat:NSLocalizedString(@"IN VERSION %@",), [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]]];
+    [self.textViewNotes setText:[NSString stringWithFormat:NSLocalizedString(@"IN VERSION %@",), [self appVersion]]];
     
     if (self.getStartedText != nil) {
-        [self.getStartedButton setTitle:NSLocalizedString(self.getStartedText,) forState:UIControlStateNormal];
+        [self.getStartedButton setTitle:NSLocalizedString(self.getStartedText,)
+                               forState:UIControlStateNormal];
     } else {
-        [self.getStartedButton setTitle:NSLocalizedString(@"Get Started",) forState:UIControlStateNormal];
+        [self.getStartedButton setTitle:NSLocalizedString(@"GET STARTED",) forState:UIControlStateNormal];
     }
     
-    [self.getStartedButton setEnabled:self.disableRequiredToReadAll];
+    [self.getStartedButton setEnabled:self.disableReadAllRequired];
     
     [super viewDidLoad];
 }
@@ -90,13 +69,19 @@
 }
 
 -(IBAction)GetStarted:(id)sender {
-    NSString *verString = [NSString stringWithFormat:@"whatsNew_%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
+    NSString *verString = [NSString stringWithFormat:@"whatsNew_%@", [self appVersion]];
     
-    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:@"1" forKey:verString];
-    [defaults synchronize];
+    [[NSUserDefaults standardUserDefaults] setObject:@"1" forKey:verString];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+-(NSString *)appVersion {
+    return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+}
+-(BOOL)whatsNewAlreadyShown {
+    return ![[[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"whatsNew_%@", [self appVersion]]] boolValue];
 }
 
 

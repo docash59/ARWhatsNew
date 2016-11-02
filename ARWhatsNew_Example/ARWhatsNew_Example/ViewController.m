@@ -18,12 +18,29 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    ARWhatsNew *vc = [[ARWhatsNew alloc] initCheckAppVersion];
+    vc.primaryColor = [UIColor blackColor];
+    vc.secondaryColor = [UIColor yellowColor];
+    vc.primaryTextColor = [UIColor whiteColor];
+    vc.getStartedText = @"START APP";
+    vc.disableReadAllRequired = YES;
+    
+    if ([vc whatsNewAlreadyShown]) {
+        [self presentViewController:vc animated:YES completion:nil];
+    }
 }
 
+-(IBAction)presentHardCoded {
+    ARWhatsNew *vc = [[ARWhatsNew alloc] initCheckAppVersion];
+    vc.primaryColor = [UIColor whiteColor];
+    vc.secondaryColor = [UIColor redColor];
+    vc.primaryTextColor = [UIColor blackColor];
+    vc.getStartedText = @"DISMISS";
+    vc.disableReadAllRequired = YES;
+    [self presentViewController:vc animated:YES completion:nil];
+}
 
 @end
