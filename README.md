@@ -4,7 +4,7 @@ A simple and light-weight What's New modal for new app updates.
 # Functions
 
 | Key | Type | Description |
-|--|--|--|
+|---|---|---|
 | **primaryColor** | `UIColor` | Set view background color |
 | **secondaryColor** | `UIColor` | Set "Get Started" button background color |
 | **primaryTextColor** | `UIColor` | Set text color for "**Whats New**", "**In Version X**", "**Release Notes**" and version notes. |
