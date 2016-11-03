@@ -1,7 +1,9 @@
+
+
 # ARWhatsNew
 A simple and light-weight What's New modal for new app updates.
 
-# Functions
+# Properties
 
 | Key | Type | Description |
 |---|---|---|
@@ -47,11 +49,14 @@ ARWhatsNew provides a simple bool that returns:
  - **NO** - If the user **HAS** seen Whats New
 
 
-     [[ARWhatsNew alloc] whatsNewAlreadyShown]
+    	[[ARWhatsNew alloc] whatsNewAlreadyShown]
 
-# Planned Future Features
+# Planned For The Future
  - Automatically check `appid` in App Store.
 	 - Get release notes from App Store.
  - Only show Whats New for major releases. (opt.)
 	 - SHOW Whats New if version is `2.x` 
 	 - DONT show Whats New for minimal version `2.x.x`
+
+# Contact & Support
+I am available on [Twitter](https://twitter.com/DocAsh59) or [Create a new Issue](https://github.com/docash59/ARWhatsNew/issues)
