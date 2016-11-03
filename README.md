@@ -43,16 +43,15 @@ But I would recommend:
 ### Checking WhatsNew has already been shown
 ARWhatsNew provides a simple bool that returns:
 
- - **NO** - If user **HASN'T** seen Whats New
- - **YES** - If the user **HAS** seen Whats New
+ - **YES** - If user **HASN'T** seen Whats New
+ - **NO** - If the user **HAS** seen Whats New
 
 
-    [[ARWhatsNew alloc] whatsNewAlreadyShown]
+     [[ARWhatsNew alloc] whatsNewAlreadyShown]
 
 # Planned Future Features
  - Automatically check `appid` in App Store.
 	 - Get release notes from App Store.
  - Only show Whats New for major releases. (opt.)
-	 - SHOW if version is `2.x` 
+	 - SHOW Whats New if version is `2.x` 
 	 - DONT show Whats New for minimal version `2.x.x`
-	 - OR show for all new updates
