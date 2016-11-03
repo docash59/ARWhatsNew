@@ -19,8 +19,10 @@
 @property UIColor *secondaryColor;
     // "Whats New", "In Version vX", "Release Notes" and version notes text color.
 @property UIColor *primaryTextColor;
+    // Show the Release Notes
+@property NSString *releaseNotes;
     // Change default for button instade of 'Get Started'.
-@property NSString *getStartedText;
+@property NSString *acceptButtonText;
     // Disable "Get Started" button from being disabled until user scrolls to bottom.
 @property BOOL disableReadAllRequired;
 

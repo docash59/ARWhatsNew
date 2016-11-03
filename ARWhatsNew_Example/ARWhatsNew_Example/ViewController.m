@@ -25,7 +25,7 @@
     vc.primaryColor = [UIColor blackColor];
     vc.secondaryColor = [UIColor yellowColor];
     vc.primaryTextColor = [UIColor whiteColor];
-    vc.getStartedText = @"START APP";
+    vc.acceptButtonText = @"START APP";
     vc.disableReadAllRequired = YES;
     
     if ([vc whatsNewAlreadyShown]) {
@@ -38,7 +38,8 @@
     vc.primaryColor = [UIColor whiteColor];
     vc.secondaryColor = [UIColor redColor];
     vc.primaryTextColor = [UIColor blackColor];
-    vc.getStartedText = @"DISMISS";
+    vc.releaseNotes = @"Welcome to ARWhatsNew.\n\n";
+    vc.acceptButtonText = @"DISMISS";
     vc.disableReadAllRequired = YES;
     [self presentViewController:vc animated:YES completion:nil];
 }

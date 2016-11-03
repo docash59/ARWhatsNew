@@ -15,7 +15,7 @@
 @property IBOutlet UILabel *labelInVersion;
 @property IBOutlet UILabel *labelReleaseNotes;
 @property IBOutlet UITextView *textViewNotes;
-@property IBOutlet UIButton *getStartedButton;
+@property IBOutlet UIButton *acceptButton;
 
 @end
 
@@ -32,39 +32,50 @@
 }
 
 -(void)viewDidLoad {
-        // Set colors
-    self.view.backgroundColor = self.primaryColor;
-    self.labelWhatsNew.textColor = self.primaryTextColor;
-    self.labelInVersion.textColor = self.primaryTextColor;
-    self.labelReleaseNotes.textColor = self.primaryTextColor;
+    if (self.primaryColor != nil) {
+        self.view.backgroundColor = self.primaryColor;
+        self.acceptButton.titleLabel.textColor = self.primaryColor;
+    }
+    if (self.secondaryColor != nil) {
+        self.acceptButton.backgroundColor = self.secondaryColor;
+    }
+    if (self.primaryTextColor != nil) {
+        self.labelWhatsNew.textColor = self.primaryTextColor;
+        self.labelInVersion.textColor = self.primaryTextColor;
+        self.labelReleaseNotes.textColor = self.primaryTextColor;
+        self.textViewNotes.textColor = self.primaryTextColor;
+    }
     
-    self.textViewNotes.textColor = self.primaryTextColor;
     self.textViewNotes.font = [UIFont systemFontOfSize:18];
-    
-    self.getStartedButton.titleLabel.textColor = self.primaryColor;
-    self.getStartedButton.backgroundColor = self.secondaryColor;
     
         // Set and localise visible text
     [self.labelWhatsNew setText:NSLocalizedString(@"WHATS NEW",)];
     [self.textViewNotes setText:[NSString stringWithFormat:NSLocalizedString(@"IN VERSION %@",), [self appVersion]]];
     
-    if (self.getStartedText != nil) {
-        [self.getStartedButton setTitle:NSLocalizedString(self.getStartedText,)
+        // Set and localise release notes in textView
+    [self.textViewNotes setText:NSLocalizedString(self.releaseNotes,)];
+    
+        // Accept button
+    if (self.acceptButtonText != nil) {
+            // Change acceptButtonText title to determinted string
+        [self.acceptButton setTitle:NSLocalizedString(self.acceptButtonText,)
                                forState:UIControlStateNormal];
     } else {
-        [self.getStartedButton setTitle:NSLocalizedString(@"GET STARTED",) forState:UIControlStateNormal];
+            // Set acceptButtonText to default string
+        [self.acceptButton setTitle:NSLocalizedString(@"GET STARTED",)
+                           forState:UIControlStateNormal];
     }
     
-    [self.getStartedButton setEnabled:self.disableReadAllRequired];
+    [self.acceptButton setEnabled:self.disableReadAllRequired];
     
     [super viewDidLoad];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     float bottomEdge = scrollView.contentOffset.y + scrollView.frame.size.height;
-        // Get Started button is disabled until user reads the entire version log
+        // AcceptButtonText is disabled until user reads the entire version log unless disableReadAllRequired is set to YES
     if (bottomEdge >= scrollView.contentSize.height) {
-        [self.getStartedButton setEnabled:YES];
+        [self.acceptButton setEnabled:YES];
     }
 }
 
