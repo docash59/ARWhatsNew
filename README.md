@@ -3,6 +3,8 @@
 # ARWhatsNew
 A simple and light-weight What's New modal for new app updates.
 
+This neat tool allows you to simply present a modal to your users to tell them Whats New in your update!
+
 # Preview
 
 ![preview](https://github.com/docash59/ARWhatsNew/blob/master/preview.png "Preview")
@@ -35,6 +37,8 @@ A simple and light-weight What's New modal for new app updates.
 # Usage
 
 ### Example
+
+Place in **ViewDidAppear**
 
         ARWhatsNew *vc = [[ARWhatsNew alloc] init];
         vc.primaryColor = [UIColor blackColor];
