@@ -44,7 +44,7 @@
     [self.acceptButton setTitleColor:[self readableForegroundColorForBackgroundColor:self.secondaryColor]
                             forState:UIControlStateNormal];
     
-    self.textViewNotes.font = [UIFont systemFontOfSize:18];
+    self.textViewNotes.font = [UIFont systemFontOfSize:17];
     
         // Set and localise visible text
     [self.labelWhatsNew setText:NSLocalizedString(@"WHATS NEW",)];
