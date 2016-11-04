@@ -3,6 +3,12 @@
 # ARWhatsNew
 A simple and light-weight What's New modal for new app updates.
 
+# Preview
+
+![preview](https://github.com/docash59/ARWhatsNew/blob/master/preview.png "Preview")
+
+ - [appetize.io](https://appetize.io/app/1c835153f9h7k36ab1k2mub9p4?device=iphone6s&scale=75&orientation=portrait&osVersion=10.0)
+
 # Properties
 
 | Key | Type | Description |
