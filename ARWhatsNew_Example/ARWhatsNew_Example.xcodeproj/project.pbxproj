@@ -63,14 +63,14 @@
 		D119382E1DCA157400A1B8C3 /* ARWhatsNew_Example */ = {
 			isa = PBXGroup;
 			children = (
+				D11938401DCA157400A1B8C3 /* Info.plist */,
+				D119384C1DCA15B200A1B8C3 /* Launch Screen.storyboard */,
+				D119383B1DCA157400A1B8C3 /* Assets.xcassets */,
 				D11938321DCA157400A1B8C3 /* AppDelegate.h */,
 				D11938331DCA157400A1B8C3 /* AppDelegate.m */,
 				D11938351DCA157400A1B8C3 /* ViewController.h */,
 				D11938361DCA157400A1B8C3 /* ViewController.m */,
 				D11938381DCA157400A1B8C3 /* Main.storyboard */,
-				D119383B1DCA157400A1B8C3 /* Assets.xcassets */,
-				D119384C1DCA15B200A1B8C3 /* Launch Screen.storyboard */,
-				D11938401DCA157400A1B8C3 /* Info.plist */,
 				D11938461DCA158B00A1B8C3 /* ARWhatsNew */,
 				D119382F1DCA157400A1B8C3 /* Supporting Files */,
 			);
@@ -322,6 +322,7 @@
 				D11938451DCA157400A1B8C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
