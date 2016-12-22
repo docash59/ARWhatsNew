@@ -20,9 +20,11 @@
 @property NSString *acceptButtonText;
     // Disable "Get Started" button from being disabled until user scrolls to bottom.
 @property BOOL disableReadAllRequired;
+    // Determine to show modal for x.x or x.x.x
+@property BOOL majorReleasesOnly;
 
 -(void)resetWhatsNew;
 -(NSString*)appVersion;
--(BOOL)whatsNewNotShown;
+-(void)showWhatsNew;
 
 @end

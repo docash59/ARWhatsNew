@@ -80,6 +80,7 @@
 
 -(void)resetWhatsNew {
     NSString *verString = [NSString stringWithFormat:@"whatsNew_%@", [self appVersion]];
+    
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:verString];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
@@ -117,9 +118,26 @@
 -(NSString *)appVersion {
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
 }
--(BOOL)whatsNewNotShown {
-    return ![[[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"whatsNew_%@", [self appVersion]]] boolValue];
-}
 
+-(void)showWhatsNew {
+    // Get number of . in version number
+    NSUInteger numberOfOccurrences = [[self.appVersion componentsSeparatedByString:@"."] count] - 1;
+    
+    // Check if WhatsNew has already been presented
+    if (![[[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"whatsNew_%@",
+                                                              [self appVersion]]] boolValue]) {
+        // WhatsNew hasn't been presented for version
+        // Check if majorRelesesOnly is enabled
+        if (self.majorReleasesOnly && (int)numberOfOccurrences == 1) {
+            // Check if only one . is detected
+            // Present modal
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:self animated:YES completion:nil];
+        }
+        
+        if (!self.majorReleasesOnly) {
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:self animated:YES completion:nil];
+        }
+    }
+}
 
 @end
