@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Whats New-->
+        <scene sceneID="2fa-Vz-V7h">
+            <objects>
+                <viewController storyboardIdentifier="WhatsNew" id="nka-P9-byo" customClass="ARWhatsNew" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ucf-1i-pgT"/>
+                        <viewControllerLayoutGuide type="bottom" id="18m-Az-eSO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QRy-05-gGp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHATS NEW" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUg-md-Hca">
+                                <rect key="frame" x="16" y="21" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BWc-v0-qNk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="42"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAT-3z-04K">
+                                <rect key="frame" x="0.0" y="612" width="375" height="55"/>
+                                <color key="backgroundColor" red="0.1220189258" green="0.57733255620000001" blue="0.84165352579999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="ntH-gs-UBh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
+                                <state key="normal" title="GET STARTED">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.14122495060000001" green="0.1247994229" blue="0.12983161209999999" alpha="0.2471104452" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="GetStarted:" destination="nka-P9-byo" eventType="touchUpInside" id="bj2-nT-AZg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RELEASE NOTES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3e-Jj-W7b">
+                                <rect key="frame" x="16" y="110" width="343" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="CdZ-Ye-OoP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqh-Di-add">
+                                <rect key="frame" x="16" y="143" width="344" height="460"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="nka-P9-byo" id="fpY-G0-KBd"/>
+                                </connections>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IN VERSION" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHa-mh-XqL">
+                                <rect key="frame" x="16" y="67" width="343" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1448488235" green="0.65408736469999995" blue="0.94786173110000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VHa-mh-XqL" firstAttribute="leading" secondItem="H3e-Jj-W7b" secondAttribute="leading" id="Ax5-Hk-CoO"/>
+                            <constraint firstItem="JUg-md-Hca" firstAttribute="centerX" secondItem="iqh-Di-add" secondAttribute="centerX" id="IWL-uP-vYl"/>
+                            <constraint firstItem="MAT-3z-04K" firstAttribute="top" secondItem="iqh-Di-add" secondAttribute="bottom" constant="9" id="V3E-Y3-fLY"/>
+                            <constraint firstItem="H3e-Jj-W7b" firstAttribute="top" secondItem="JUg-md-Hca" secondAttribute="bottom" constant="39" id="Wvr-1D-KnP"/>
+                            <constraint firstItem="VHa-mh-XqL" firstAttribute="top" secondItem="QRy-05-gGp" secondAttribute="top" constant="67" id="bag-Fv-QsK"/>
+                            <constraint firstAttribute="trailing" secondItem="H3e-Jj-W7b" secondAttribute="trailing" constant="16" id="ch9-y0-zxw"/>
+                            <constraint firstItem="MAT-3z-04K" firstAttribute="leading" secondItem="QRy-05-gGp" secondAttribute="leading" id="duj-Q6-zys"/>
+                            <constraint firstItem="iqh-Di-add" firstAttribute="leading" secondItem="QRy-05-gGp" secondAttribute="leadingMargin" id="ekz-6t-Sja"/>
+                            <constraint firstItem="VHa-mh-XqL" firstAttribute="centerX" secondItem="iqh-Di-add" secondAttribute="centerX" id="fkE-gu-fqA"/>
+                            <constraint firstItem="JUg-md-Hca" firstAttribute="centerX" secondItem="QRy-05-gGp" secondAttribute="centerX" id="g7H-cm-Jd6"/>
+                            <constraint firstItem="VHa-mh-XqL" firstAttribute="leading" secondItem="QRy-05-gGp" secondAttribute="leading" constant="16" id="gBg-mG-mnH"/>
+                            <constraint firstItem="JUg-md-Hca" firstAttribute="leading" secondItem="QRy-05-gGp" secondAttribute="leading" constant="16" id="gWc-rR-IGp"/>
+                            <constraint firstItem="iqh-Di-add" firstAttribute="top" secondItem="H3e-Jj-W7b" secondAttribute="bottom" id="gja-bF-AQq"/>
+                            <constraint firstItem="H3e-Jj-W7b" firstAttribute="top" secondItem="VHa-mh-XqL" secondAttribute="bottom" constant="19" id="h77-vk-k7k"/>
+                            <constraint firstItem="JUg-md-Hca" firstAttribute="centerX" secondItem="MAT-3z-04K" secondAttribute="centerX" id="u3N-dq-R1s"/>
+                            <constraint firstAttribute="bottom" secondItem="MAT-3z-04K" secondAttribute="bottom" id="yA2-lz-XsO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dismissButton" destination="MAT-3z-04K" id="jLG-xr-6hd"/>
+                        <outlet property="labelInVersion" destination="VHa-mh-XqL" id="Gzo-cW-Ap2"/>
+                        <outlet property="labelReleaseNotes" destination="H3e-Jj-W7b" id="jtg-Ky-NPN"/>
+                        <outlet property="labelWhatsNew" destination="JUg-md-Hca" id="GpX-4f-CGg"/>
+                        <outlet property="textViewNotes" destination="iqh-Di-add" id="4ak-o3-ZHS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yIG-1u-QAv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="121" y="149"/>
+        </scene>
+    </scenes>
+</document>

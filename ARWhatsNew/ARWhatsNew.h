@@ -11,20 +11,19 @@
 
 @interface ARWhatsNew : UIViewController
     // Background color
-@property UIColor *primaryColor;
+@property UIColor *backgroundColor;
     // Button background color
-@property UIColor *secondaryColor;
+@property UIColor *dismissButtonColor;
     // Show the Release Notes
 @property NSString *releaseNotes;
     // Change default for button instade of 'Get Started'.
-@property NSString *acceptButtonText;
+@property NSString *dismissButtonText;
     // Disable "Get Started" button from being disabled until user scrolls to bottom.
 @property BOOL disableReadAllRequired;
     // Determine to show modal for x.x or x.x.x
 @property BOOL majorReleasesOnly;
 
 -(void)resetWhatsNew;
--(NSString*)appVersion;
--(void)showWhatsNew;
+-(BOOL)userNotSeenWhatsNew;
 
 @end
