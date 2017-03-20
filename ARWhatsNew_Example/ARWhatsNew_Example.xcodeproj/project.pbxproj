@@ -13,8 +13,8 @@
 		D119383A1DCA157400A1B8C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D11938381DCA157400A1B8C3 /* Main.storyboard */; };
 		D119383C1DCA157400A1B8C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D119383B1DCA157400A1B8C3 /* Assets.xcassets */; };
 		D119384A1DCA158B00A1B8C3 /* ARWhatsNew.m in Sources */ = {isa = PBXBuildFile; fileRef = D11938481DCA158B00A1B8C3 /* ARWhatsNew.m */; };
-		D119384B1DCA158B00A1B8C3 /* ARWhatsNew.xib in Resources */ = {isa = PBXBuildFile; fileRef = D11938491DCA158B00A1B8C3 /* ARWhatsNew.xib */; };
 		D119384D1DCA15B200A1B8C3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D119384C1DCA15B200A1B8C3 /* Launch Screen.storyboard */; };
+		D1C407541E8078FD00F3C6FE /* ARWhatsNew.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C407531E8078FD00F3C6FE /* ARWhatsNew.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +29,8 @@
 		D11938401DCA157400A1B8C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D11938471DCA158B00A1B8C3 /* ARWhatsNew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARWhatsNew.h; sourceTree = "<group>"; };
 		D11938481DCA158B00A1B8C3 /* ARWhatsNew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARWhatsNew.m; sourceTree = "<group>"; };
-		D11938491DCA158B00A1B8C3 /* ARWhatsNew.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARWhatsNew.xib; sourceTree = "<group>"; };
 		D119384C1DCA15B200A1B8C3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		D1C407531E8078FD00F3C6FE /* ARWhatsNew.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ARWhatsNew.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,7 @@
 			children = (
 				D11938471DCA158B00A1B8C3 /* ARWhatsNew.h */,
 				D11938481DCA158B00A1B8C3 /* ARWhatsNew.m */,
-				D11938491DCA158B00A1B8C3 /* ARWhatsNew.xib */,
+				D1C407531E8078FD00F3C6FE /* ARWhatsNew.storyboard */,
 			);
 			name = ARWhatsNew;
 			path = ../../ARWhatsNew;
@@ -157,7 +157,7 @@
 				D119383C1DCA157400A1B8C3 /* Assets.xcassets in Resources */,
 				D119383A1DCA157400A1B8C3 /* Main.storyboard in Resources */,
 				D119384D1DCA15B200A1B8C3 /* Launch Screen.storyboard in Resources */,
-				D119384B1DCA158B00A1B8C3 /* ARWhatsNew.xib in Resources */,
+				D1C407541E8078FD00F3C6FE /* ARWhatsNew.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
