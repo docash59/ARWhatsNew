@@ -47,18 +47,18 @@
     self.textViewNotes.font = [UIFont systemFontOfSize:17];
     
         // Set and localise visible text
-    [self.labelWhatsNew setText:NSLocalizedString(@"WHATS NEW",)];
+    [self.labelWhatsNew setText:@"WHATS NEW"];
     
     NSString *ver = [NSString stringWithFormat:@"IN VERSION %@", [self appVersion]];
-    [self.labelInVersion setText:NSLocalizedString(ver, nil)];
+    [self.labelInVersion setText:ver];
     
         // Set and localise release notes in textView.
         // Check if hardcoded releaseNotes were supplied.
     if (self.releaseNotes != nil) {
         // If there is a hardcoded string then show that.
-        [self.textViewNotes setText:NSLocalizedString(self.releaseNotes,)];
+        [self.textViewNotes setText:self.releaseNotes];
         
-        [[NSUserDefaults standardUserDefaults] setObject:NSLocalizedString(self.releaseNotes,) forKey:@"ARWhatsNewReleaseNotes"];
+        [[NSUserDefaults standardUserDefaults] setObject:self.releaseNotes forKey:@"ARWhatsNewReleaseNotes"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     // Check if there are already existing release notes stored on device.
@@ -66,35 +66,46 @@
         // Load saved release notes into view.
         [self.textViewNotes setText:[[NSUserDefaults standardUserDefaults] objectForKey:@"ARWhatsNewReleaseNotes"]];
     }else {
-        // If releaseNotes was not provided then get release notes from
+        // If releaseNotes was not provided then get release notes from App Store
         NSDictionary* infoDictionary = [[NSBundle mainBundle] infoDictionary];
         NSString* appID = infoDictionary[@"CFBundleIdentifier"];
         NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.apple.com/lookup?bundleId=%@", appID]];
         NSData* data = [NSData dataWithContentsOfURL:url];
-        NSDictionary* lookup = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
-        if ([lookup[@"resultCount"] integerValue] == 1){
-            // Set and localise release notes in textView
-            NSString *storeReleaseNotes = lookup[@"results"][0][@"releaseNotes"];
+        if (data) {
+            NSDictionary* lookup = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             
-            [self.textViewNotes setText:NSLocalizedString(storeReleaseNotes,)];
-            [[NSUserDefaults standardUserDefaults] setObject:storeReleaseNotes forKey:@"ARWhatsNewReleaseNotes"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
+            if ([lookup[@"resultCount"] integerValue] == 1){
+                // Set and localise release notes in textView
+                NSString *storeReleaseNotes = lookup[@"results"][0][@"releaseNotes"];
+                NSString *storeVersion = lookup[@"results"][0][@"version"];
+                
+                if ([storeVersion isEqualToString:[self appVersion]]) {
+                    // Are equal versions.
+                    [self.textViewNotes setText:storeReleaseNotes];
+                    [[NSUserDefaults standardUserDefaults] setObject:storeReleaseNotes forKey:@"ARWhatsNewReleaseNotes"];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
+                } else {
+                    [self.textViewNotes setText:[NSString stringWithFormat:@"App Store Version: %@\nCurrent Version: %@\n\nApp versions are not the same.\n\nPlease contact the developer.", storeVersion, [self appVersion]]];
+                }
+                
+            } else {
+                // If no app was found with the BundleID of project then show error message.
+                [self.textViewNotes setText:@"App not available on the App Store.\n\nPlease contact the developer."];
+            }
         } else {
-            // If no app was found with the BundleID of project then show error message.
-            [self.textViewNotes setText:NSLocalizedString(@"App not available on the App Store.\n\nPlease contact the developer.",)];
+            [self.textViewNotes setText:@"Unable to get App Store data.\n\nPlease check your internet connection."];
         }
     }
     
         // Accept button
     if (self.dismissButtonText != nil) {
             // Change acceptButtonText title to determinted string
-        [self.dismissButton setTitle:NSLocalizedString(self.dismissButtonText,)
+        [self.dismissButton setTitle:self.dismissButtonText
                                forState:UIControlStateNormal];
     } else {
             // Set acceptButtonText to default string
-        [self.dismissButton setTitle:NSLocalizedString(@"GET STARTED",)
+        [self.dismissButton setTitle:@"GET STARTED"
                            forState:UIControlStateNormal];
     }
     
