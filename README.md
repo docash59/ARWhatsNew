@@ -73,6 +73,7 @@ ALTERNATIVELY, PLEASE CONSIDER USING HARD CODED `releaseNotes`.**
 This function checks the `NSUserDefault` to determine whether the user has not seen the current version of `ARWhatsNew`.
 
 # Planned For The Future
+ - Optimise for iPhone X.
  - <s>Automatically check `appid` in App Store.</s>
      - <s>Get release notes from App Store.</s>
  - <s>Only show Whats New for major releases. (opt.)</s>
